@@ -1,19 +1,33 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
-
-group 'org.example'
-version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
+def junitVersion = "5.8.0"
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.0'
+    testRuntimeOnly(
+            'org.slf4j:slf4j-simple:1.7.32',
+            'org.junit.jupiter:junit-jupiter-engine:5.8.0')
+    testImplementation(
+            'com.codeborne:selenide:6.0.3')
 }
 
-test {
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Test) {
     useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+//            events "started", "failed"
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
 }
