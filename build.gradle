@@ -11,23 +11,23 @@ def junitVersion = "5.8.0"
     allureVersion = "2.15.0"
     selenideVersion = "5.24.0"
 
-def var = allure {
-    version = allureVersion
+allure {
+    version = "${allureVersion}"
     autoconfigure = true
     aspectjweaver = true
     configuration = "testImplementation"
     useJUnit5() {
-        version = allureVersion
+        version = "${allureVersion}"
     }
 }
 dependencies {
     testImplementation(
-            "com.codeborne:selenide:$selenideVersion",
-            "io.qameta.allure:allure-selenide:$selenideVersion",
-            "org.junit.jupiter:junit-jupiter-api:$junitVersion")
+            "com.codeborne:selenide:${selenideVersion}",
+            "io.qameta.allure:allure-selenide:${selenideVersion}",
+            "org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly(
             'org.slf4j:slf4j-simple:1.7.29',
-            "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+            "org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 
 }
 
