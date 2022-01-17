@@ -26,7 +26,7 @@ public class HomeworkJenkins {
         $(".react-datepicker__day--009:not(react-datepicker__day--009 react-datepicker__day--outside-month)").click();
         $(By.xpath("//*[@id=\"subjectsInput\"]")).setValue("Maths").pressEnter();
         $(byText("Music")).click();
-        $("#uploadPicture").uploadFile(new File("src/test/resources/screen/Screenshot 2021-09-02 at 12.26.43.png"));
+        $("#uploadPicture").uploadFile(new File("src/test/resources/Screenshot 2021-11-18 at 14.38.28.png"));
         $(By.xpath("//*[@id=\"currentAddress\"]")).setValue("addressless");
         $(By.xpath("//*[@id=\"state\"]/div/div[2]")).click();
         $(byText("NCR")).click();
@@ -34,6 +34,6 @@ public class HomeworkJenkins {
         $(byText("Delhi")).click();
         $(By.xpath("//*[@id=\"submit\"]")).click();
         $(".table-responsive").shouldHave(text("Irina Krbtv"), text("krbtvir@mail.com"),
-                text ("Screenshot 2021-09-02 at 12.26.43.png"), text("Maths"), text("NCR Delhi"));
+                text ("Screenshot 2021-11-18 at 14.38.28.png"), text("Maths"), text("NCR Delhi"));
     }
 }
