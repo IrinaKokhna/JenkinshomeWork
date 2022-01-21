@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -5,12 +6,13 @@ import org.openqa.selenium.By;
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 import java.io.File;
 
-public class HomeworkJenkins {
+public class HomeworkJenkins extends TestBase {
     @Test
     void homeTest() {
         open("https://demoqa.com/automation-practice-form");
