@@ -14,7 +14,7 @@ def junitVersion = "5.8.0",
 allure {
     version = "${allureVersion}"
     autoconfigure = true
-    aspectjweaver = true
+    aspectjweaver = false
     useJUnit5() {
         version = "${allureVersion}"
     }
