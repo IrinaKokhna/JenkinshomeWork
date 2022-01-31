@@ -21,7 +21,7 @@ public class SystemPropertiesTests {
     @Test
     @Tag("properties")
     void browserTest2() {
-        String browser = System.getProperty("browser", "chrome");
+        String browser = System.getProperty("browser");
         String version = System.getProperty("version", "91");
         String browserSize = System.getProperty("browserSize", "300x300");
 
