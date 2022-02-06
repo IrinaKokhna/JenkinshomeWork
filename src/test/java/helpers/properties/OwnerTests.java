@@ -5,20 +5,20 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Selenide.open;
 import static java.lang.String.format;
 
 @Tag("properties")
-public class OwnerTests {
+public class OwnerTests extends TestBase {
     public CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
 
     @Test
     void readCredTest() {
-        String login = credentials.login();
+        String username = credentials.username();
         String password = credentials.password();
-        System.out.println(login);
-        System.out.println(password);
 
-        String message = format("I login as %s with password %s", login, password);
+        String message = format("I login as %s with password %s", username, password);
         System.out.println(message);
+        open("https://revjet.com");
     }
 }

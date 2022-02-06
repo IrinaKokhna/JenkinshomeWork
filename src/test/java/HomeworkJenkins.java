@@ -1,16 +1,12 @@
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.Test;
+import helpers.properties.TestBase;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
-
-import java.io.File;
 
 public class HomeworkJenkins extends TestBase {
     @Test
